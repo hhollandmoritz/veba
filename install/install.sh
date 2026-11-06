@@ -24,7 +24,7 @@ conda install -c conda-forge mamba -y
 echo "Creating ${VEBA} main environment"
 
 ENV_NAME="VEBA"
-(mamba create -y -p ${CONDA_ENVS_PATH}/${ENV_NAME} -c conda-forge -c bioconda -c jolespin parallel seqkit genopype networkx biopython biom-format anndata || echo "Error when creating main VEBA environment" ; exit 1) &> ${LOG_DIRECTORY}/VEBA.log
+(mamba create -y -p ${CONDA_ENVS_PATH}/${ENV_NAME} -c conda-forge -c bioconda -c jolespin pip parallel seqkit genopype networkx biopython biom-format anndata || echo "Error when creating main VEBA environment" ; exit 1) &> ${LOG_DIRECTORY}/VEBA.log
 mamba run -p ${CONDA_ENVS_PATH}/${ENV_NAME} pip install pyexeggutor
 
 # Copy main executable
